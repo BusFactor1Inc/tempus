@@ -60,7 +60,8 @@ struct {
 ```
 
 The input 'data' file would be C code defining the functions and the
-array of Proceses to be fed to the scheduler.
+array of Proceses to be fed to the scheduler. Here is the code for
+this:
 
 ```c
 #include "fbanim.h"
