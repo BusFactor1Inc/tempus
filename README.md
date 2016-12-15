@@ -40,9 +40,36 @@ int main() {
 This will print a series of dots and commas on the screen until you
 hit Ctrl-C.
 
-TODO: turn into shared library.
-TODO: writing bindings for Common Lisp?
-TODO: re-write in Common Lisp.
+Next Steps
+----------
+
+This could be used in conjunction with 'sxc' to generate data to be
+fed into the scheduler beyond the normal capabilities of C.  To do
+this, one would have to define the data structure to be fed to the
+scheduler, something like so:
+
+```c
+struct {
+       unsigned int start_frame;
+       unsigned int end_frame;
+       unsigned int period;
+       unsigned int priority;
+       void* function;
+       unsigned long argument;
+} Process;
+```
+
+The input 'data' file would be C code defining the functions and the
+array of Proceses to be fed to the scheduler.
+
+TODO
+----
+
+- turn into shared library.
+
+- writing bindings for Common Lisp?
+
+- re-write in Common Lisp.
 
 --
 Copyleft - Burton Samograd
