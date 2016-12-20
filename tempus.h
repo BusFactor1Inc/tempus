@@ -21,20 +21,20 @@
  * Copywrite 1997
  */
 
-#ifndef _FBANIM_H
-#define _FBANIM_H
+#ifndef _TEMPUS_H
+#define _TEMPUS_H
 
 typedef enum {NULLPROC=0, LOW=16, MED=32, HIGH=64} PRIORITY;
 typedef void(*PROCESS)(unsigned long Arg);
 
 /* Initialize the animation system */
-int InitFrameBasedAnimSystem(void);
+int InitTempus(void);
 
 /* Run the system based on the current proc queue */
-int RunFrameBasedAnimSystem(void);
+int RunTempus(void);
 
 /* Stop the system at any time and return */
-int StopFrameBasedAnimSystem(void);
+int StopTempus(void);
 
 /* Frame counter routines.  Each returns the current
    value of the frame counter */

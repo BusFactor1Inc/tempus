@@ -1,7 +1,7 @@
-fbanim - frame based animation system
--------------------------------------
+tempus - a time based scheduler
+-------------------------------
 
-fbanim is a 'time' based scheduler written in C.  It is used to
+tempus is a 'time' based scheduler written in C.  It is used to
 perodically schedule function calls over an arbitrary timeline.
 
 It is what is normally known as a 'dynamic main loop'.
@@ -12,8 +12,8 @@ run-time.
 The following is a short example:
 
 ```c
-#include "fbanim.h"
-#include "fbanim.c"
+#include "tempus.h"
+#include "tempus.c"
 
 void proc1(int arg) {
   printf(".");
@@ -25,7 +25,7 @@ void proc2(int arg) {
 
 int main() {
   ListInit();
-  InitFrameBasedAnimSystem();
+  InitTempus();
   InsertProc(0,		/* start frame	*/
   	     -1,	/* end frame	*/
 	     1,		/* period	*/
@@ -33,7 +33,7 @@ int main() {
 	     proc1,	/* function	*/
 	     0		/* argument	*/);
   InsertProc(0, -1, 1, 0, proc2, 0);
-  RunFrameBasedAnimSystem();
+  RunTempus();
 }
 ```
 
@@ -64,8 +64,8 @@ array of Proceses to be fed to the scheduler. Here is the code for
 this:
 
 ```c
-#include "fbanim.h"
-#include "fbanim.c"
+#include "tempus.h"
+#include "tempus.c"
 
 typedef struct {
        unsigned int start_frame;
@@ -105,11 +105,11 @@ void loadup() {
 
 int main() {
   ListInit();
-  InitFrameBasedAnimSystem();
+  InitTempus();
 
   loadup();
 
-  RunFrameBasedAnimSystem();
+  RunTempus();
 }
 ```
 

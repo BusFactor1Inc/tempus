@@ -34,7 +34,7 @@
 #include <stdarg.h>
 
 /* Local includes */
-#include "fbanim.h"
+#include "tempus.h"
 #include "list.h"
 
 /* Proc structure definition */
@@ -70,7 +70,7 @@ static void RunProc(PROC *Proc);
 static int Reschedual(void);
 
 /* Initialize the animation system */
-int InitFrameBasedAnimSystem(void)
+int InitTempus(void)
 {
   /* Allocate the lists for the module */
   ReadyQueue = ListCreate();
@@ -84,7 +84,7 @@ int InitFrameBasedAnimSystem(void)
 }
 
 /* Run the system based on the contents of the current queue */
-int RunFrameBasedAnimSystem(void)
+int RunTempus(void)
 {
   /* Set the run flag */
   RunFlag = 1;
@@ -118,7 +118,7 @@ int RunFrameBasedAnimSystem(void)
 }
 
 /* Stop the frame based anim system on the next context switch */
-int StopFrameBasedAnimSystem(void)
+int StopTempus(void)
 {
   RunFlag = 0;
 

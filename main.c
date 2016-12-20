@@ -1,5 +1,5 @@
-#include "fbanim.h"
-#include "fbanim.c"
+#include "tempus.h"
+#include "tempus.c"
 
 typedef struct {
        unsigned int start_frame;
@@ -39,9 +39,9 @@ void loadup() {
 
 int main() {
   ListInit();
-  InitFrameBasedAnimSystem();
+  InitTempus();
 
   loadup();
 
-  RunFrameBasedAnimSystem();
+  RunTempus();
 }
